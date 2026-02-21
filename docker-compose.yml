@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  backend:
+    image: username/backend
+    build: ./backend
+    ports:
+      - "5001:5000"
+
+  frontend:
+    image: username/frontend
+    build: ./frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
