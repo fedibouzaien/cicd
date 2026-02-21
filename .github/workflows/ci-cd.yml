@@ -44,12 +44,12 @@ jobs:
         npm run build
 
     # ================= SONARCLOUD =================
-    # - name: SonarCloud Scan
-    #   uses: SonarSource/sonarcloud-github-action@v2
-    #   env:
-    #     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-    #   with:
-    #     projectBaseDir: .
+    - name: SonarCloud Scan
+      uses: SonarSource/sonarcloud-github-action@v2
+      env:
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      with:
+        projectBaseDir: .
 
     - name: SonarCloud Quality Gate
       uses: SonarSource/sonarqube-quality-gate-action@v1
